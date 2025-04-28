@@ -1,9 +1,6 @@
 name: First Workflow
 
-on:
-  push:
-    branches:
-      - '**'    # runs on push to any branch
+on: [pull_request]
 
 jobs:
   say-hello:
