@@ -1,6 +1,6 @@
 name: First Workflow
 
-on: [pull_request]
+on: [push,pull_request]
 
 jobs:
   say-hello:
@@ -12,3 +12,14 @@ jobs:
 
       - name: Say Hello
         run: echo "Hello from GitHub Actions!"
+
+  print:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: print push success
+        run: echo "push detected"
+
+
+
